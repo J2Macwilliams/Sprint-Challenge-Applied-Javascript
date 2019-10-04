@@ -10,12 +10,12 @@
 
 axios.get('https://lambda-times-backend.herokuapp.com/topics')
 .then (data => {
-    console.log(data)
+    // console.log(data)
     const tabInfo = data.data.topics;
-    console.log('Tab: ', tabInfo)
+    // console.log('Tab: ', tabInfo)
 
     const tabLocation = document.querySelector('.topics')
-    const tabMain =document.querySelector('.tabs')
+    // const tabMain =document.querySelector('.tabs')
 
     tabInfo.forEach(item => {
         const banana = tabbie(item)
