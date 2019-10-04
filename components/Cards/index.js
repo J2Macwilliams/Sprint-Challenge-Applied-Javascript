@@ -53,14 +53,53 @@ function articleCard (news) {
 axios.get('https://lambda-times-backend.herokuapp.com/articles')
   .then(response => {
     console.log('info: ', response);
-    const newArticles = response.data.articles.bootstrap;
-    console.log(newArticles);
-    newArticles.forEach(element => {
+    const newArticles1 = response.data.articles.javascript;
+    const newArticles2 = response.data.articles.bootstrap;
+    const newArticles3 = response.data.articles.technology;
+    const newArticles4 = response.data.articles.jquery;
+    const newArticles5 = response.data.articles.node;
+    // console.log(newArticles1);
+    newArticles1.forEach(element => {
         const article = articleCard(element)
         const cardsContainer = document.querySelector('.cards-container');
         cardsContainer.appendChild(article);
+
+    });
+    newArticles2.forEach(element => {
+        const article = articleCard(element)
+        const cardsContainer = document.querySelector('.cards-container');
+        cardsContainer.appendChild(article);
+        
+    });
+    newArticles3.forEach(element => {
+        const article = articleCard(element)
+        const cardsContainer = document.querySelector('.cards-container');
+        cardsContainer.appendChild(article);
+        
+    });
+    newArticles4.forEach(element => {
+        const article = articleCard(element)
+        const cardsContainer = document.querySelector('.cards-container');
+        cardsContainer.appendChild(article);
+        
+    });
+    newArticles5.forEach(element => {
+        const article = articleCard(element)
+        const cardsContainer = document.querySelector('.cards-container');
+        cardsContainer.appendChild(article);
+        
     });
   })
+//   .then(response => {
+//     console.log('info: ', response);
+//     const newArticles2 = response.data.articles.bootstrap;
+//     console.log(newArticles2);
+//     newArticles2.forEach(element => {
+//         const article = articleCard(element)
+//         const cardsContainer = document.querySelector('.cards-container');
+//         cardsContainer.appendChild(article);
+//     });
+//   })
   .catch(error => {
   console.log("The data was not returned", error);
     });

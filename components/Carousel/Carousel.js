@@ -17,3 +17,46 @@
     <div class="right-button"> > </div>
   </div>
 */
+let images = [
+  {mountains: "./assets/carousel/mountains.jpeg"},
+  {computer: "./assets/carousel/computer.jpeg"},
+  {trees: "./assets/carousel/trees.jpeg"},
+  {turntable: "./assets/carousel/turntable.jpeg"}
+  ]
+  
+  
+  const carouselContainer = document.querySelector("carousel-container");
+  
+  function carouselCreator(imgArray) {
+    const carousel = document.createElement('div');
+    const leftBtn = document.createElement('div');
+    const ulist = document.createElement('ul');
+    const rightBtn = document.createElement('div');
+  
+    //setup structure of elements
+    carousel.appendChild(leftBtn);
+    carousel.appendChild(ulist);
+    carousel.appendChild(rightBtn);
+  
+    //set content
+    imgArray.forEach((i) => {
+      const li = document.createElement('li');
+      li.src = i.src;
+      ulist.appendChild(li);
+    })
+  
+    //set class
+    carousel.classList.add("carousel");
+    leftBtn.classList.add("left-button");
+    rightBtn.classList.add("right-button");
+  
+    //add events
+    leftBtn.addEventListener('click', (e) => {
+      menu.classList.toggle('menu--open');
+    })
+  
+    rightBtn.addEventListener('click', (e) => {
+      menu.classList.toggle('menu--open');
+    })
+  
+  }
