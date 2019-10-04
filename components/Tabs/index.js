@@ -14,18 +14,18 @@ axios.get('https://lambda-times-backend.herokuapp.com/topics')
     const tabInfo = data.data.topics;
     console.log('Tab: ', tabInfo)
 
-    const tabLocation = document.querySelector('.tabs')
+    const tabLocation = document.querySelector('.topics')
+    const tabMain =document.querySelector('.tabs')
 
     tabInfo.forEach(item => {
         const banana = tabbie(item)
-        
         tabLocation.appendChild(banana)
     })
 })
 
 function tabbie(info){
     const tab = document.createElement('div');
-    tab.classList.add('tab')
-    tab.textContent = info
+    tab.classList.add('tab');
+    tab.textContent = info;
     return tab
 }
