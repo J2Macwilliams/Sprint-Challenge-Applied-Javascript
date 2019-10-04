@@ -17,46 +17,50 @@
     <div class="right-button"> > </div>
   </div>
 */
-let images = [
-  {mountains: "./assets/carousel/mountains.jpeg"},
-  {computer: "./assets/carousel/computer.jpeg"},
-  {trees: "./assets/carousel/trees.jpeg"},
-  {turntable: "./assets/carousel/turntable.jpeg"}
-  ]
   
-  
-  const carouselContainer = document.querySelector("carousel-container");
-  
-  function carouselCreator(imgArray) {
+  function carouselCreator() {
+    //create elements
     const carousel = document.createElement('div');
     const leftBtn = document.createElement('div');
-    const ulist = document.createElement('ul');
+    const img1 = document.createAttribute('img');
+    const img2 = document.createAttribute('img');
+    const img3 = document.createAttribute('img');
+    const img4 = document.createAttribute('img');
     const rightBtn = document.createElement('div');
-  
-    //setup structure of elements
-    carousel.appendChild(leftBtn);
-    carousel.appendChild(ulist);
-    carousel.appendChild(rightBtn);
-  
-    //set content
-    imgArray.forEach((i) => {
-      const li = document.createElement('li');
-      li.src = i.src;
-      ulist.appendChild(li);
-    })
-  
+
     //set class
     carousel.classList.add("carousel");
     leftBtn.classList.add("left-button");
     rightBtn.classList.add("right-button");
+
+
+    //setup structure of elements
+    carousel.appendChild(leftBtn);
+    carousel.appendChild(img1);
+    carousel.appendChild(img2);
+    carousel.appendChild(img3);
+    carousel.appendChild(img4);
+    carousel.appendChild(rightBtn);
   
+    //set content
+    img1.src = "./assets/carousel/mountains.jpeg";
+    img2.src = "./assets/carousel/computer.jpeg";
+    img3.src = "./assets/carousel/trees.jpeg";
+    img4.src = "./assets/carousel/turntable.jpeg";
+
     //add events
     leftBtn.addEventListener('click', (e) => {
-      menu.classList.toggle('menu--open');
+      menu.classList.toggle('slide-left');
     })
   
     rightBtn.addEventListener('click', (e) => {
-      menu.classList.toggle('menu--open');
+      menu.classList.toggle('slide-right');
     })
-  
+    return carousel
   }
+
+  const carouselContainer = document.querySelector("carousel-container");
+
+  carouselContainer.appendChild(carouselCreator());
+
+

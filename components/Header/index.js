@@ -33,8 +33,6 @@ function Header() {
     header.appendChild(title);
     header.appendChild(temp);
 
-    
-
     return header
 }
 

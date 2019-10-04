@@ -58,7 +58,8 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
     const newArticles3 = response.data.articles.technology;
     const newArticles4 = response.data.articles.jquery;
     const newArticles5 = response.data.articles.node;
-    // console.log(newArticles1);
+
+    
     newArticles1.forEach(element => {
         const article = articleCard(element)
         const cardsContainer = document.querySelector('.cards-container');
@@ -90,16 +91,7 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
         
     });
   })
-//   .then(response => {
-//     console.log('info: ', response);
-//     const newArticles2 = response.data.articles.bootstrap;
-//     console.log(newArticles2);
-//     newArticles2.forEach(element => {
-//         const article = articleCard(element)
-//         const cardsContainer = document.querySelector('.cards-container');
-//         cardsContainer.appendChild(article);
-//     });
-//   })
+
   .catch(error => {
   console.log("The data was not returned", error);
     });

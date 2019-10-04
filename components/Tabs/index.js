@@ -10,12 +10,8 @@
 
 axios.get('https://lambda-times-backend.herokuapp.com/topics')
 .then (data => {
-    // console.log(data)
     const tabInfo = data.data.topics;
     console.log('Tab: ', tabInfo)
-
-    
-    // const tabMain =document.querySelector('.tabs')
 
     tabInfo.forEach(item => {
         const newInfo = tabbie(item)
