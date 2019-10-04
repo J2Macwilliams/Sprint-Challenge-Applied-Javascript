@@ -17,3 +17,34 @@
 // </div>
 //
 // Create a card for each of the articles and add the card to the DOM.
+
+function articleCard (news) {
+    const card = document.createElement('div');
+    const headline = document.createElement('div');
+    const authorBox = document.createElement('div');
+    const imgContainer = document.createElement('div');
+    const img = document.createElement('img');
+    const name = document.createElement('span');
+
+    //add class 
+    card.classList.add('card');
+    headline.classList.add('headline');
+    authorBox.classList.add('author');
+    imgContainer.classList.add('img-container');
+
+    //add card structure
+    card.appendChild(headline);
+    card.appendChild(authorBox);
+    authorBox.appendChild(imgContainer);
+    imgContainer.appendChild(img);
+    authorBox.appendChild(name);
+
+    //set content
+    headline.textContent = news.headline;
+    img.src = news.authorPhoto;
+    name.textContent = news.authorName;
+
+    
+    return card
+    
+}
